@@ -1,0 +1,5 @@
+﻿Booking ID,Timestamp,Customer Name,Customer Phone,Destination,State,Travelers,Days,User Budget,Total Expense,Remaining Buffer,Train Name,Train No,Train Fares,Hotel Cost,Food & Local Transit,Sightseeing Cost,Status
+STC-GLO-493959,2026-09-16 19:28:36,Tourist,+91 98765 43210,Western Ghats & Sahyadri,"Maharashtra, India",2,2,"₹9,260","₹9,260",₹0,MSRTC Shivneri Volvo Multi-Axle AC,MH-14-BT-3320,"₹2,160","₹3,200","₹3,200",₹700,CONFIRMED_SAVED
+STC-GLO-1789566869,2026-09-16 19:24:29,Guest Traveler,N/A,Mahabaleshwar & Panchgani,,2,2,₹0,₹0,₹0,Direct Rail,STC-EXP,₹0,₹0,₹0,₹0,CONFIRMED_SAVED
+STC-GLO-534167,2026-09-16 19:09:52,Sahilujadhav3179,+91 98765 43210,Western Ghats & Sahyadri,"Maharashtra, India",1,2,"₹4,616","₹4,616",₹0,Western Vande Bharat Express,22223,"₹1,306","₹1,360","₹1,600",₹350,CONFIRMED_SAVED
+STC-GLO-144576,2026-09-11 09:38:49,Rahul Patil,+91 98765 43210,Western Ghats & Sahyadri,"Maharashtra, India",2,2,"₹7,060","₹7,060",₹0,Deccan Queen Superfast,12123,"₹1,800","₹1,360","₹3,200",₹700,CONFIRMED_SAVED

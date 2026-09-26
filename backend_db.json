@@ -1,0 +1,602 @@
+{
+  "bookings": [
+    {
+      "id": "STC-GLO-493959",
+      "createdAt": "2026-09-16 19:28:36",
+      "customerName": "Tourist",
+      "customerPhone": "+91 98765 43210",
+      "destination": "Western Ghats & Sahyadri",
+      "state": "Maharashtra, India",
+      "travelers": 2,
+      "durationDays": 2,
+      "financials": {
+        "userBudget": "₹9,260",
+        "totalExpense": "₹9,260",
+        "otherPlatformsTotal": "₹10,850",
+        "totalSavings": "₹1,590",
+        "remainingSavings": "₹0",
+        "budgetStatus": "CONFIRMED"
+      },
+      "train": {
+        "name": "MSRTC Shivneri Volvo Multi-Axle AC",
+        "number": "MH-14-BT-3320",
+        "class": "Window Seat / Lower Berth 🪟",
+        "route": "Pune ➔ Western Ghats & Sahyadri",
+        "totalFare": "₹2,160"
+      },
+      "hotel": {
+        "hotelType": "The Machan Bio-Diversity Eco Resort",
+        "nights": 1,
+        "rooms": 1,
+        "ratePerNight": "₹3,200",
+        "totalHotelCost": "₹3,200"
+      },
+      "foodAndTransit": {
+        "localTransit": "₹1,440",
+        "meals": "₹1,760",
+        "total": "₹3,200"
+      },
+      "sightseeing": {
+        "activitiesTotal": "₹700",
+        "passes": "Verified Sightseeing & Eco-Pass"
+      },
+      "relatedPlaces": [
+        "Kaas Plateau UNESCO Valley",
+        "Sinhagad Fort Historic Citadel",
+        "Thoseghar Roaring Waterfalls",
+        "Koyna Wildlife Forest Sanctuary"
+      ],
+      "status": "CONFIRMED_SAVED"
+    },
+    {
+      "id": "STC-GLO-1789566869",
+      "createdAt": "2026-09-16 19:24:29",
+      "customerName": "Guest Traveler",
+      "customerPhone": "N/A",
+      "destination": "Mahabaleshwar & Panchgani",
+      "state": "",
+      "travelers": 2,
+      "durationDays": 2,
+      "financials": {
+        "userBudget": "₹0",
+        "totalExpense": "₹0",
+        "remainingSavings": "₹0",
+        "budgetStatus": "CONFIRMED"
+      },
+      "train": {
+        "name": "Direct Rail",
+        "number": "STC-EXP",
+        "class": "AC Chair Car",
+        "route": "City -> Destination",
+        "totalFare": "₹0"
+      },
+      "hotel": {
+        "hotelType": "Verified Sustainable Stay",
+        "nights": 1,
+        "rooms": 1,
+        "ratePerNight": "₹0",
+        "totalHotelCost": "₹0"
+      },
+      "foodAndTransit": {
+        "localTransit": "₹0",
+        "meals": "₹0",
+        "total": "₹0"
+      },
+      "sightseeing": {
+        "activitiesTotal": "₹0",
+        "passes": "Eco-Trail Pass"
+      },
+      "relatedPlaces": [],
+      "status": "CONFIRMED_SAVED"
+    },
+    {
+      "id": "STC-GLO-534167",
+      "createdAt": "2026-09-16 19:09:52",
+      "customerName": "Sahilujadhav3179",
+      "customerPhone": "+91 98765 43210",
+      "destination": "Western Ghats & Sahyadri",
+      "state": "Maharashtra, India",
+      "travelers": 1,
+      "durationDays": 2,
+      "financials": {
+        "userBudget": "₹4,616",
+        "totalExpense": "₹4,616",
+        "otherPlatformsTotal": "₹5,256",
+        "totalSavings": "₹640",
+        "remainingSavings": "₹0",
+        "budgetStatus": "CONFIRMED"
+      },
+      "train": {
+        "name": "Western Vande Bharat Express",
+        "number": "22223",
+        "class": "Window Seat / Lower Berth 🪟",
+        "route": "Pune ➔ Western Ghats & Sahyadri",
+        "totalFare": "₹1,306"
+      },
+      "hotel": {
+        "hotelType": "Sahyadri Heritage Homestay & Organic Orchard",
+        "nights": 1,
+        "rooms": 1,
+        "ratePerNight": "₹1,360",
+        "totalHotelCost": "₹1,360"
+      },
+      "foodAndTransit": {
+        "localTransit": "₹720",
+        "meals": "₹880",
+        "total": "₹1,600"
+      },
+      "sightseeing": {
+        "activitiesTotal": "₹350",
+        "passes": "Verified Sightseeing & Eco-Pass"
+      },
+      "relatedPlaces": [
+        "Kaas Plateau UNESCO Valley",
+        "Sinhagad Fort Historic Citadel",
+        "Thoseghar Roaring Waterfalls",
+        "Koyna Wildlife Forest Sanctuary"
+      ],
+      "status": "CONFIRMED_SAVED"
+    },
+    {
+      "id": "STC-GLO-144576",
+      "createdAt": "2026-09-11 09:38:49",
+      "customerName": "Rahul Patil",
+      "customerPhone": "+91 98765 43210",
+      "destination": "Western Ghats & Sahyadri",
+      "state": "Maharashtra, India",
+      "travelers": 2,
+      "durationDays": 2,
+      "financials": {
+        "userBudget": "₹7,060",
+        "totalExpense": "₹7,060",
+        "otherPlatformsTotal": "₹7,764",
+        "totalSavings": "₹704",
+        "remainingSavings": "₹0",
+        "budgetStatus": "CONFIRMED"
+      },
+      "train": {
+        "name": "Deccan Queen Superfast",
+        "number": "12123",
+        "class": "Window Seat / Lower Berth 🪟",
+        "route": "Pune ➔ Western Ghats & Sahyadri",
+        "totalFare": "₹1,800"
+      },
+      "hotel": {
+        "hotelType": "Sahyadri Heritage Homestay & Organic Orchard",
+        "nights": 1,
+        "rooms": 1,
+        "ratePerNight": "₹1,360",
+        "totalHotelCost": "₹1,360"
+      },
+      "foodAndTransit": {
+        "localTransit": "₹1,440",
+        "meals": "₹1,760",
+        "total": "₹3,200"
+      },
+      "sightseeing": {
+        "activitiesTotal": "₹700",
+        "passes": "Verified Sightseeing & Eco-Pass"
+      },
+      "relatedPlaces": [
+        "Kaas Plateau UNESCO Valley",
+        "Sinhagad Fort Historic Citadel",
+        "Thoseghar Roaring Waterfalls",
+        "Koyna Wildlife Forest Sanctuary"
+      ],
+      "status": "CONFIRMED_SAVED"
+    }
+  ],
+  "hotelRates": {
+    "baseRate": 3000,
+    "dynamicRate": 3360,
+    "occupancy": 60,
+    "lastUpdated": "2026-09-21 23:16:42"
+  },
+  "sosAlerts": [
+    {
+      "id": "SOS-1789563839",
+      "type": "Medical / Police Emergency SOS",
+      "action": "CALL_108",
+      "customerName": "Guest Tourist",
+      "customerPhone": "N/A",
+      "destination": "Western Ghats & Sahyadri",
+      "latitude": 18.5204,
+      "longitude": 73.8567,
+      "accuracy": 15,
+      "mapsUrl": "https://maps.google.com/?q=18.5204,73.8567",
+      "timestamp": "9/16/2026, 6:33:58 PM"
+    },
+    {
+      "id": "SOS-1789563824",
+      "type": "Medical / Police Emergency SOS",
+      "action": "SOS_OPENED",
+      "customerName": "Guest Tourist",
+      "customerPhone": "N/A",
+      "destination": "Western Ghats & Sahyadri",
+      "latitude": 18.5204,
+      "longitude": 73.8567,
+      "accuracy": 15,
+      "mapsUrl": "https://maps.google.com/?q=18.5204,73.8567",
+      "timestamp": "9/16/2026, 6:33:44 PM"
+    },
+    {
+      "id": "SOS-1789548341",
+      "type": "Medical / Police Emergency SOS",
+      "action": "SOS_OPENED",
+      "customerName": "Google Traveler",
+      "customerPhone": "N/A",
+      "destination": "Western Ghats & Sahyadri",
+      "latitude": 18.5204,
+      "longitude": 73.8567,
+      "accuracy": 15,
+      "mapsUrl": "https://maps.google.com/?q=18.5204,73.8567",
+      "timestamp": "9/16/2026, 2:15:41 PM"
+    }
+  ],
+  "users": [
+    {
+      "id": "USR-ADMIN-01",
+      "name": "Sahil Jadhav",
+      "email": "sahilujadhav143@gmail.com",
+      "phone": "+91 9975156893",
+      "role": "ADMIN",
+      "password": "admin123",
+      "createdAt": "2026-09-01 10:00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "USR-CUST-101",
+      "name": "Sahil (Traveler)",
+      "email": "sahil@traveler.com",
+      "phone": "+91 9876543210",
+      "role": "CUSTOMER",
+      "password": "user123",
+      "createdAt": "2026-09-10 14:30:00",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "USR-CUST-3455",
+      "name": "Sahilujadhav143",
+      "email": "sahilujadhav143@gmail.com",
+      "phone": "N/A",
+      "role": "CUSTOMER",
+      "password": "9876543221",
+      "createdAt": "2026-09-15 20:14:15",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "USR-CUST-47705",
+      "name": "Rohan Sharma",
+      "email": "rohan@traveler.com",
+      "phone": "9822001122",
+      "role": "CUSTOMER",
+      "password": "rohan123",
+      "createdAt": "2026-09-16 14:05:05",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "USR-CUST-8067",
+      "name": "Tourist",
+      "email": "tourist@travelconnect.com",
+      "phone": "N/A",
+      "role": "CUSTOMER",
+      "password": "tourist123",
+      "createdAt": "2026-09-16 14:11:07",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "USR-CUST-8555",
+      "name": "Hrutikamate351",
+      "email": "hrutikamate351@gmail.com",
+      "phone": "N/A",
+      "role": "CUSTOMER",
+      "password": "12345678",
+      "createdAt": "2026-09-16 14:19:15",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "USR-CUST-5049",
+      "name": "Tourist",
+      "email": "tourist@smarttour.com",
+      "phone": "N/A",
+      "role": "CUSTOMER",
+      "password": "tourist123",
+      "createdAt": "2026-09-16 18:54:09",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "USR-CUST-5392",
+      "name": "Sahilujadhav3179",
+      "email": "sahilujadhav3179@gmail.com",
+      "phone": "N/A",
+      "role": "CUSTOMER",
+      "password": "tourist123",
+      "createdAt": "2026-09-16 18:59:52",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "USR-CUST-65498",
+      "name": "Priya Deshmukh",
+      "email": "priya.travel@gmail.com",
+      "phone": "9811223344",
+      "role": "CUSTOMER",
+      "password": "priya_secure",
+      "createdAt": "2026-09-16 19:01:38",
+      "status": "ACTIVE"
+    }
+  ],
+  "loginLogs": [
+    {
+      "id": "LOG-1790013112",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-21 23:21:52",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1790012797",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-21 23:16:37",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1790011365",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-21 22:52:45",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789567184",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-16 19:29:44",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789567040",
+      "userId": "USR-CUST-5049",
+      "userName": "Tourist",
+      "email": "tourist@smarttour.com",
+      "phone": "N/A",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 19:27:20",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789565803",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-16 19:06:43",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789565498",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-16 19:01:38",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789565498",
+      "userId": "USR-CUST-65498",
+      "userName": "Priya Deshmukh",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 19:01:38",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789565498",
+      "userId": "USR-CUST-65498",
+      "userName": "Priya Deshmukh",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 19:01:38",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "REGISTERED_LOGGED_IN"
+    },
+    {
+      "id": "LOG-1789565392",
+      "userId": "USR-CUST-5392",
+      "userName": "Sahilujadhav3179",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 18:59:52",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS (AUTO-REGISTERED)"
+    },
+    {
+      "id": "LOG-1789565353",
+      "userId": "USR-CUST-5049",
+      "userName": "Tourist",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 18:59:13",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789565049",
+      "userId": "USR-CUST-5049",
+      "userName": "Tourist",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 18:54:09",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS (AUTO-REGISTERED)"
+    },
+    {
+      "id": "LOG-1789548611",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-16 14:20:11",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789548555",
+      "userId": "USR-CUST-8555",
+      "userName": "Hrutikamate351",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 14:19:15",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS (AUTO-REGISTERED)"
+    },
+    {
+      "id": "LOG-1789548499",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-16 14:18:19",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789548452",
+      "userId": "USR-CUST-47705",
+      "userName": "Rohan Sharma",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 14:17:32",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789548452",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-16 14:17:32",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789548452",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav",
+      "role": "ADMIN",
+      "timestamp": "2026-09-16 14:17:32",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789548067",
+      "userId": "USR-CUST-8067",
+      "userName": "Tourist",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 14:11:07",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS (AUTO-REGISTERED)"
+    },
+    {
+      "id": "LOG-1789547705",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav (Admin)",
+      "role": "ADMIN",
+      "timestamp": "2026-09-16 14:05:05",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789547705",
+      "userId": "USR-CUST-47705",
+      "userName": "Rohan Sharma",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 14:05:05",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789547705",
+      "userId": "USR-CUST-47705",
+      "userName": "Rohan Sharma",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-16 14:05:05",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "REGISTERED_LOGGED_IN"
+    },
+    {
+      "id": "LOG-1789547356",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav (Admin)",
+      "role": "ADMIN",
+      "timestamp": "2026-09-16 13:59:16",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789483455",
+      "userId": "USR-CUST-3455",
+      "userName": "Sahilujadhav143",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-15 20:14:15",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS (AUTO-REGISTERED)"
+    },
+    {
+      "id": "LOG-1789483256",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav (Admin)",
+      "role": "ADMIN",
+      "timestamp": "2026-09-15 20:10:56",
+      "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) App",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789482613",
+      "userId": "USR-ADMIN-01",
+      "userName": "Sahil Jadhav (Admin)",
+      "role": "ADMIN",
+      "timestamp": "2026-09-15 20:00:13",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "LOG-1789482613",
+      "userId": "USR-CUST-101",
+      "userName": "Sahil (Traveler)",
+      "role": "CUSTOMER",
+      "timestamp": "2026-09-15 20:00:13",
+      "device": "Python-urllib/3.14",
+      "ip": "127.0.0.1",
+      "status": "SUCCESS"
+    }
+  ]
+}

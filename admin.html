@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>SmartTourConnect - Master Admin Portal</title>
+  <link rel="icon" type="image/png" href="logo.png?v=2">
+  <!-- Strict Admin Guard: Restricted to Sahil Jadhav (sahilujadhav143@gmail.com) -->
+  <script>
+    (function() {
+      const userStr = localStorage.getItem('stc_auth_user');
+      if (!userStr) {
+        window.location.replace('login.html');
+        return;
+      }
+      try {
+        const user = JSON.parse(userStr);
+        const normEmail = (user.email || '').toLowerCase().replace(',', '.').trim();
+        if (user.role !== 'ADMIN' && normEmail !== 'sahilujadhav143@gmail.com') {
+          alert('Access Denied: Admin Console is strictly reserved for Sahil Jadhav (sahilujadhav143@gmail.com).');
+          window.location.replace('index.html');
+        }
+      } catch(e) {
+        window.location.replace('login.html');
+      }
+    })();
+  </script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .luxury-card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+  
+    /* Mobile Anti-Glitch & Table Touch Scrolling */
+    html, body {
+      overflow-x: hidden !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+    @media (max-width: 768px) {
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+    }
+    .overflow-x-auto {
+      -webkit-overflow-scrolling: touch !important;
+    }
+
+  </style>
+</head>
+
+<body class="bg-[#070b14] text-slate-100 min-h-screen pb-16">
+
+  <!-- ================= TOP ADMIN NAVIGATION ================= -->
+  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800 px-4 sm:px-8 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl overflow-hidden border border-amber-500/40 bg-slate-900 flex items-center justify-center shadow-md">
+        <img src="logo.png?v=2" alt="SmartTourConnect" class="w-full h-full object-cover">
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-base sm:text-lg font-black text-white tracking-tight">
+            SmartTour<span class="text-blue-500">Connect</span>
+          </h1>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-500/20 text-amber-300 border border-amber-500/40">
+            👑 ADMIN CONSOLE
+          </span>
+        </div>
+        <p class="text-[11px] text-slate-400">Master Operations, Customer Directory & Security Desk</p>
+      </div>
+    </div>
+
+    <!-- Right Admin Info & Actions -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Admin Profile Pill -->
+      <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-xs">
+        <div class="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-black flex items-center justify-center text-[10px]">
+          SJ
+        </div>
+        <div>
+          <span class="text-white font-bold block leading-none">Sahil Jadhav</span>
+          <span class="text-[9px] text-emerald-400 font-semibold">sahilujadhav143@gmail.com</span>
+        </div>
+      </div>
+
+      <a href="index.html" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl text-xs font-semibold border border-slate-700 transition flex items-center gap-1.5">
+        <span>🧭</span>
+        <span>View Tour App</span>
+      </a>
+
+      <button onclick="logoutAdmin()" class="px-3 py-1.5 bg-rose-600/20 hover:bg-rose-600/30 text-rose-300 border border-rose-500/30 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
+        <span>🚪</span>
+        <span>Sign Out</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ADMIN CONTAINER ================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 pt-6 sm:pt-8 space-y-6">
+
+    <!-- KPI Metric Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <!-- Card 1: Total Bookings -->
+      <div class="luxury-card rounded-2xl p-5 border-l-4 border-l-blue-500 shadow-lg">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold uppercase tracking-wider">
+          <span>Total Bookings</span>
+          <span class="text-blue-400 text-base">📋</span>
+        </div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span id="kpi-bookings" class="text-3xl font-black text-white">0</span>
+          <span class="text-xs text-emerald-400 font-bold">● Live Sync</span>
+        </div>
+        <p class="text-[11px] text-slate-400 mt-1">Confirmed traveler passes</p>
+      </div>
+
+      <!-- Card 2: Total Booking Value -->
+      <div class="luxury-card rounded-2xl p-5 border-l-4 border-l-emerald-500 shadow-lg">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold uppercase tracking-wider">
+          <span>Gross Revenue</span>
+          <span class="text-emerald-400 text-base">₹</span>
+        </div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span id="kpi-revenue" class="text-3xl font-black text-emerald-400">₹0</span>
+        </div>
+        <p class="text-[11px] text-slate-400 mt-1">0% commission direct savings</p>
+      </div>
+
+      <!-- Card 3: Registered Customers -->
+      <div onclick="switchAdminTab('customers')" class="luxury-card rounded-2xl p-5 border-l-4 border-l-purple-500 shadow-lg cursor-pointer hover:border-purple-400 transition">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold uppercase tracking-wider">
+          <span>Registered Customers</span>
+          <span class="text-purple-400 text-base">👥</span>
+        </div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span id="kpi-users" class="text-3xl font-black text-white">0</span>
+          <span class="text-xs text-purple-400 font-bold">With Phone & Email</span>
+        </div>
+        <p class="text-[11px] text-purple-300 mt-1">Click to view all profiles ➔</p>
+      </div>
+
+      <!-- Card 4: SOS Safety Incidents -->
+      <div class="luxury-card rounded-2xl p-5 border-l-4 border-l-rose-500 shadow-lg">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold uppercase tracking-wider">
+          <span>SOS Alerts</span>
+          <span class="text-rose-400 text-base">🚨</span>
+        </div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span id="kpi-sos" class="text-3xl font-black text-rose-400">0</span>
+          <span class="text-xs text-rose-400 font-bold">Active</span>
+        </div>
+        <p class="text-[11px] text-slate-400 mt-1">24/7 Rapid tourist rescue grid</p>
+      </div>
+
+    </div>
+
+    <!-- Action Bar: Export Buttons & Search Filter -->
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-4 bg-slate-900/90 rounded-2xl border border-slate-800">
+      <div class="relative flex-1 max-w-md">
+        <input 
+          type="text" 
+          id="admin-search-input" 
+          placeholder="Search by customer name, email, phone number..."
+          oninput="handleAdminSearch(this.value)"
+          class="w-full bg-slate-950 border border-slate-700 rounded-xl py-2 pl-9 pr-3 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-blue-500">
+        <span class="absolute left-3 top-2.5 text-slate-400 text-xs">🔍</span>
+      </div>
+
+      <div class="flex items-center gap-2 flex-wrap">
+        <button onclick="exportCustomersCSV()" class="px-3.5 py-2 bg-purple-600 hover:bg-purple-500 active:scale-95 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm cursor-pointer" title="Download all customers with Email & Phone">
+          <span>👥</span>
+          <span>Export Customers (.CSV)</span>
+        </button>
+        <button onclick="exportLoginsCSV()" class="px-3.5 py-2 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm cursor-pointer" title="Download Login Audit Logs with Email & Phone">
+          <span>👁️</span>
+          <span>Export Logins (.CSV)</span>
+        </button>
+        <button onclick="exportBookingsCSV()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm cursor-pointer" title="Download Bookings">
+          <span>📊</span>
+          <span>Export Bookings (.CSV)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs: 1. Customer Directory | 2. Login Audit | 3. Bookings Register | 4. SOS Desk -->
+    <div class="flex items-center gap-2 border-b border-slate-800 pb-2 text-xs sm:text-sm font-bold flex-wrap">
+      
+      <!-- Tab 1: All Registered Customers (NEW PRIMARY TAB) -->
+      <button id="admin-tab-btn-customers" onclick="switchAdminTab('customers')" class="px-4 py-2 rounded-xl bg-purple-600 text-white shadow-sm flex items-center gap-2 transition cursor-pointer">
+        <span>👥</span>
+        <span>Registered Customers Directory</span>
+        <span id="badge-customers-count" class="px-1.5 py-0.2 rounded-full text-[10px] bg-black/20 text-white">0</span>
+      </button>
+
+      <!-- Tab 2: User Login Audit Trail (Shows Email & Phone) -->
+      <button id="admin-tab-btn-logins" onclick="switchAdminTab('logins')" class="px-4 py-2 rounded-xl text-slate-400 hover:text-white flex items-center gap-2 transition cursor-pointer">
+        <span>👁️</span>
+        <span>Live User Logins Audit</span>
+        <span id="badge-logins-count" class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800 text-slate-300">0</span>
+      </button>
+
+      <!-- Tab 3: Customer Bookings Register -->
+      <button id="admin-tab-btn-bookings" onclick="switchAdminTab('bookings')" class="px-4 py-2 rounded-xl text-slate-400 hover:text-white flex items-center gap-2 transition cursor-pointer">
+        <span>📋</span>
+        <span>Customer Bookings</span>
+        <span id="badge-bookings-count" class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800 text-slate-300">0</span>
+      </button>
+
+      <!-- Tab 4: Emergency SOS -->
+      <button id="admin-tab-btn-sos" onclick="switchAdminTab('sos')" class="px-4 py-2 rounded-xl text-slate-400 hover:text-white flex items-center gap-2 transition cursor-pointer">
+        <span>🚨</span>
+        <span>Emergency SOS Alerts</span>
+        <span id="badge-sos-count" class="px-1.5 py-0.2 rounded-full text-[10px] bg-rose-950 text-rose-300">0</span>
+      </button>
+
+    </div>
+
+    <!-- ================= TAB CONTENT 1: CUSTOMERS DIRECTORY (NEW) ================= -->
+    <div id="admin-sec-customers" class="luxury-card rounded-2xl overflow-hidden shadow-xl">
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+        <div>
+          <h3 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+            <span>👥</span> All Registered Customer Accounts
+          </h3>
+          <p class="text-xs text-slate-400">Complete customer profiles with verified email, contact phone number, and account creation date</p>
+        </div>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-950/80 text-slate-400 uppercase tracking-wider text-[10px] border-b border-slate-800">
+            <tr>
+              <th class="py-3 px-4">User ID</th>
+              <th class="py-3 px-4">Customer Name</th>
+              <th class="py-3 px-4">Email Address</th>
+              <th class="py-3 px-4">Phone Number</th>
+              <th class="py-3 px-4">Role</th>
+              <th class="py-3 px-4">Joined Date</th>
+              <th class="py-3 px-4">Status</th>
+            </tr>
+          </thead>
+          <tbody id="customers-table-body" class="divide-y divide-slate-800/60 font-medium">
+            <tr>
+              <td colspan="7" class="py-8 text-center text-slate-500">
+                Loading registered customer directory...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ================= TAB CONTENT 2: LOGINS AUDIT TABLE ================= -->
+    <div id="admin-sec-logins" class="luxury-card rounded-2xl overflow-hidden shadow-xl hidden">
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+        <div>
+          <h3 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+            <span>👁️</span> Real-Time User Login Audit Trail
+          </h3>
+          <p class="text-xs text-slate-400">Tracks who logged in, when, from which device/IP, along with their registered email & phone</p>
+        </div>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-950/80 text-slate-400 uppercase tracking-wider text-[10px] border-b border-slate-800">
+            <tr>
+              <th class="py-3 px-4">Log ID</th>
+              <th class="py-3 px-4">Login Time</th>
+              <th class="py-3 px-4">Customer Name</th>
+              <th class="py-3 px-4">Email Address</th>
+              <th class="py-3 px-4">Phone Number</th>
+              <th class="py-3 px-4">Role</th>
+              <th class="py-3 px-4">Device / Browser</th>
+              <th class="py-3 px-4">IP Address</th>
+              <th class="py-3 px-4">Auth Status</th>
+            </tr>
+          </thead>
+          <tbody id="logins-table-body" class="divide-y divide-slate-800/60 font-medium">
+            <tr>
+              <td colspan="9" class="py-8 text-center text-slate-500">
+                Fetching login audit logs...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ================= TAB CONTENT 3: BOOKINGS TABLE ================= -->
+    <div id="admin-sec-bookings" class="luxury-card rounded-2xl overflow-hidden shadow-xl hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-950/80 text-slate-400 uppercase tracking-wider text-[10px] border-b border-slate-800">
+            <tr>
+              <th class="py-3 px-4">Booking ID</th>
+              <th class="py-3 px-4">Date & Time</th>
+              <th class="py-3 px-4">Customer Name</th>
+              <th class="py-3 px-4">Contact Phone</th>
+              <th class="py-3 px-4">Destination</th>
+              <th class="py-3 px-4">Train Transit</th>
+              <th class="py-3 px-4">Total Amount</th>
+              <th class="py-3 px-4">Status</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-table-body" class="divide-y divide-slate-800/60 font-medium">
+            <tr>
+              <td colspan="8" class="py-8 text-center text-slate-500">
+                Loading live booking records...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ================= TAB CONTENT 4: SOS INCIDENTS DESK ================= -->
+    <div id="admin-sec-sos" class="luxury-card rounded-2xl overflow-hidden shadow-xl hidden p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <span>🚨</span> Real-Time Emergency SOS Broadcasts
+          </h3>
+          <p class="text-xs text-slate-400">Instantly view traveler coordinates, phone numbers and GPS directions</p>
+        </div>
+      </div>
+      <div id="sos-incidents-container" class="space-y-3">
+        <p class="text-xs text-slate-500 text-center py-6">No emergency SOS incidents reported.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    let masterCustomers = [];
+    let masterLogins = [];
+    let masterBookings = [];
+    let masterSos = [];
+
+    async function loadAdminData() {
+      try {
+        const res = await fetch('/api/db');
+        if (res.ok) {
+          const db = await res.json();
+          masterCustomers = db.users || [];
+          masterLogins = db.loginLogs || [];
+          masterBookings = db.bookings || [];
+          masterSos = db.sosAlerts || [];
+
+          renderKPIs(db);
+          renderCustomersTable(masterCustomers);
+          renderLoginsTable(masterLogins);
+          renderBookingsTable(masterBookings);
+          renderSosDesk(masterSos);
+        }
+      } catch (err) {
+        console.warn('Admin fallback:', err);
+        // Fallback to local storage if offline
+        const localRegistered = JSON.parse(localStorage.getItem('stc_registered_users') || '[]');
+        if (localRegistered.length > 0) {
+          masterCustomers = localRegistered;
+          renderCustomersTable(masterCustomers);
+        }
+      }
+    }
+
+    function renderKPIs(db) {
+      const bookings = db.bookings || [];
+      const users = db.users || [];
+      const sos = db.sosAlerts || [];
+      const logins = db.loginLogs || [];
+
+      document.getElementById('kpi-bookings').innerText = bookings.length;
+      document.getElementById('badge-bookings-count').innerText = bookings.length;
+      
+      document.getElementById('kpi-users').innerText = users.length;
+      document.getElementById('badge-customers-count').innerText = users.length;
+      document.getElementById('badge-logins-count').innerText = logins.length;
+
+      document.getElementById('kpi-sos').innerText = sos.length;
+      document.getElementById('badge-sos-count').innerText = sos.length;
+
+      let totalVal = 0;
+      bookings.forEach(b => {
+        const amt = parseInt((b.financials?.totalExpense || b.amount || '0').replace(/[^0-9]/g, '')) || 0;
+        totalVal += amt;
+      });
+      document.getElementById('kpi-revenue').innerText = '₹' + totalVal.toLocaleString();
+    }
+
+    // Render Customers Directory Table
+    function renderCustomersTable(users) {
+      const tbody = document.getElementById('customers-table-body');
+      if (!users || users.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-500 font-normal">No customer accounts found.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = users.map(u => `
+        <tr class="hover:bg-slate-800/40 transition">
+          <td class="py-3.5 px-4 font-mono font-bold text-slate-400">${u.id || 'N/A'}</td>
+          <td class="py-3.5 px-4 font-bold text-white flex items-center gap-2">
+            <span class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs">
+              ${u.role === 'ADMIN' ? '👑' : '👤'}
+            </span>
+            <span>${u.name || 'Anonymous'}</span>
+          </td>
+          <td class="py-3.5 px-4 text-sky-400 font-medium">
+            <a href="mailto:${u.email}" class="hover:underline flex items-center gap-1">
+              <span>✉️</span>
+              <span>${u.email || 'N/A'}</span>
+            </a>
+          </td>
+          <td class="py-3.5 px-4 text-emerald-400 font-medium">
+            <a href="tel:${u.phone}" class="hover:underline flex items-center gap-1">
+              <span>📞</span>
+              <span>${u.phone || 'N/A'}</span>
+            </a>
+          </td>
+          <td class="py-3.5 px-4">
+            <span class="px-2 py-0.5 rounded text-[9px] font-black ${u.role === 'ADMIN' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40' : 'bg-blue-500/20 text-blue-300 border border-blue-500/40'}">
+              ${u.role || 'CUSTOMER'}
+            </span>
+          </td>
+          <td class="py-3.5 px-4 text-slate-400">${u.createdAt || 'Recent'}</td>
+          <td class="py-3.5 px-4">
+            <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              ● ACTIVE
+            </span>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // Render Live Logins Audit Table with Email & Phone
+    function renderLoginsTable(logins) {
+      const tbody = document.getElementById('logins-table-body');
+      if (!logins || logins.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="9" class="py-8 text-center text-slate-500 font-normal">No user logins recorded yet.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = logins.map(l => {
+        // Find matching customer in masterCustomers for email/phone if missing
+        let email = l.email;
+        let phone = l.phone;
+        if (!email || !phone) {
+          const matched = masterCustomers.find(u => u.id === l.userId || u.name === l.userName);
+          if (matched) {
+            email = email || matched.email;
+            phone = phone || matched.phone;
+          }
+        }
+
+        return `
+          <tr class="hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-mono font-bold text-slate-400">${l.id}</td>
+            <td class="py-3 px-4 text-slate-300">${l.timestamp}</td>
+            <td class="py-3 px-4 font-bold text-white">${l.userName}</td>
+            <td class="py-3 px-4 text-sky-400 font-medium">
+              <a href="mailto:${email || ''}" class="hover:underline">${email || 'N/A'}</a>
+            </td>
+            <td class="py-3 px-4 text-emerald-400 font-medium">
+              <a href="tel:${phone || ''}" class="hover:underline">${phone || 'N/A'}</a>
+            </td>
+            <td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-[9px] font-bold ${l.role === 'ADMIN' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40' : 'bg-blue-500/20 text-blue-300 border border-blue-500/40'}">${l.role}</span></td>
+            <td class="py-3 px-4 text-slate-400 truncate max-w-xs">${l.device || 'Browser Client'}</td>
+            <td class="py-3 px-4 text-slate-400 font-mono">${l.ip || '127.0.0.1'}</td>
+            <td class="py-3 px-4"><span class="text-emerald-400 font-bold text-[10px]">✓ ${l.status || 'SUCCESS'}</span></td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function renderBookingsTable(bookings) {
+      const tbody = document.getElementById('bookings-table-body');
+      if (!bookings || bookings.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" class="py-8 text-center text-slate-500 font-normal">No customer bookings recorded yet. New bookings from the app will appear here instantly.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = bookings.map(b => `
+        <tr class="hover:bg-slate-800/40 transition">
+          <td class="py-3 px-4 font-mono font-bold text-amber-400">${b.id}</td>
+          <td class="py-3 px-4 text-slate-400">${b.createdAt || 'Recent'}</td>
+          <td class="py-3 px-4 font-bold text-white">${b.customerName || 'Tourist'}</td>
+          <td class="py-3 px-4 text-emerald-400 font-medium"><a href="tel:${b.customerPhone || ''}" class="hover:underline">${b.customerPhone || 'N/A'}</a></td>
+          <td class="py-3 px-4 text-blue-400 font-bold">${b.destination}</td>
+          <td class="py-3 px-4 text-slate-400">${b.train?.name || 'Direct Transit'}</td>
+          <td class="py-3 px-4 font-bold text-emerald-400">${b.financials?.totalExpense || b.amount || '₹0'}</td>
+          <td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">CONFIRMED</span></td>
+        </tr>
+      `).join('');
+    }
+
+    function renderSosDesk(sosList) {
+      const container = document.getElementById('sos-incidents-container');
+      if (!sosList || sosList.length === 0) {
+        container.innerHTML = '<p class="text-xs text-slate-500 text-center py-6">No emergency SOS incidents reported.</p>';
+        return;
+      }
+
+      container.innerHTML = sosList.map(s => `
+        <div class="p-4 rounded-xl bg-rose-950/40 border border-rose-500/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs font-black text-rose-400 block">INCIDENT #${s.id}</span>
+            <strong class="text-white text-sm">${s.customerName} (${s.customerPhone})</strong>
+            <p class="text-xs text-slate-300 mt-0.5">GPS: ${s.latitude?.toFixed(4)}, ${s.longitude?.toFixed(4)} • ${s.timestamp}</p>
+          </div>
+          <a href="${s.mapsUrl}" target="_blank" class="px-4 py-2 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs font-bold shadow-md transition">
+            📍 Open GPS Map ➔
+          </a>
+        </div>
+      `).join('');
+    }
+
+    function handleAdminSearch(query) {
+      query = query.toLowerCase();
+      // Filter customers
+      const filteredCustomers = masterCustomers.filter(u => 
+        (u.name && u.name.toLowerCase().includes(query)) ||
+        (u.email && u.email.toLowerCase().includes(query)) ||
+        (u.phone && u.phone.includes(query)) ||
+        (u.id && u.id.toLowerCase().includes(query))
+      );
+      renderCustomersTable(filteredCustomers);
+
+      // Filter logins
+      const filteredLogins = masterLogins.filter(l => 
+        (l.userName && l.userName.toLowerCase().includes(query)) ||
+        (l.email && l.email.toLowerCase().includes(query)) ||
+        (l.phone && l.phone.includes(query)) ||
+        (l.ip && l.ip.includes(query))
+      );
+      renderLoginsTable(filteredLogins);
+
+      // Filter bookings
+      const filteredBookings = masterBookings.filter(b => 
+        (b.customerName && b.customerName.toLowerCase().includes(query)) ||
+        (b.id && b.id.toLowerCase().includes(query)) ||
+        (b.destination && b.destination.toLowerCase().includes(query)) ||
+        (b.customerPhone && b.customerPhone.includes(query))
+      );
+      renderBookingsTable(filteredBookings);
+    }
+
+    function switchAdminTab(tab) {
+      const tabs = ['customers', 'logins', 'bookings', 'sos'];
+      tabs.forEach(t => {
+        const sec = document.getElementById('admin-sec-' + t);
+        const btn = document.getElementById('admin-tab-btn-' + t);
+        if (t === tab) {
+          sec.classList.remove('hidden');
+          btn.className = (t === 'customers')
+            ? 'px-4 py-2 rounded-xl bg-purple-600 text-white shadow-sm flex items-center gap-2 transition cursor-pointer'
+            : (t === 'logins')
+              ? 'px-4 py-2 rounded-xl bg-blue-600 text-white shadow-sm flex items-center gap-2 transition cursor-pointer'
+              : (t === 'bookings')
+                ? 'px-4 py-2 rounded-xl bg-emerald-600 text-white shadow-sm flex items-center gap-2 transition cursor-pointer'
+                : 'px-4 py-2 rounded-xl bg-rose-600 text-white shadow-sm flex items-center gap-2 transition cursor-pointer';
+        } else {
+          sec.classList.add('hidden');
+          btn.className = 'px-4 py-2 rounded-xl text-slate-400 hover:text-white flex items-center gap-2 transition cursor-pointer';
+        }
+      });
+    }
+
+    function exportCustomersCSV() {
+      window.location.href = '/api/admin/export-customers';
+    }
+
+    function exportLoginsCSV() {
+      window.location.href = '/api/admin/export-logins';
+    }
+
+    function exportBookingsCSV() {
+      window.location.href = '/api/export-bookings-csv';
+    }
+
+    function logoutAdmin() {
+      localStorage.removeItem('stc_auth_user');
+      localStorage.removeItem('stc_auth_token');
+      window.location.href = 'login.html';
+    }
+
+    // Auto-sync admin data every 3 seconds
+    loadAdminData();
+    setInterval(loadAdminData, 3000);
+  </script>
+
+</body>
+</html>

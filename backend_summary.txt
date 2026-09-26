@@ -1,0 +1,88 @@
+================================================================================
+         SMART TOUR CONNECT - OFFICIAL BACKEND BOOKINGS LEDGER
+         Last Updated: 2026-09-21 23:21:52
+================================================================================
+
+RECORD #1 | PASS ID: STC-GLO-493959
+--------------------------------------------------------------------------------
+  Customer Name  : Tourist
+  Mobile Number  : +91 98765 43210
+  Date & Time    : 2026-09-16 19:28:36
+  Destination    : Western Ghats & Sahyadri (Maharashtra, India)
+  Travelers/Days : 2 Travelers | 2 Days
+  User Budget    : ₹9,260
+  Total Cost     : ₹9,260
+  Buffer Savings : ₹0 (CONFIRMED)
+  ----------------------------------------------------------------------------
+  Train Transit  : MSRTC Shivneri Volvo Multi-Axle AC (No. MH-14-BT-3320)
+                   Route: Pune ➔ Western Ghats & Sahyadri | Total Fare: ₹2,160
+  Hotel Stay     : The Machan Bio-Diversity Eco Resort (1 Room, 1 Night)
+                   Total Hotel Cost: ₹3,200 (0% OTA Cut)
+  Food & Commute : Transit: ₹1,440 | Meals: ₹1,760
+  Sightseeing    : ₹700 (Passes & Eco-Trails)
+  Places Covered : Kaas Plateau UNESCO Valley, Sinhagad Fort Historic Citadel, Thoseghar Roaring Waterfalls, Koyna Wildlife Forest Sanctuary
+  Status         : CONFIRMED_SAVED
+================================================================================
+
+RECORD #2 | PASS ID: STC-GLO-1789566869
+--------------------------------------------------------------------------------
+  Customer Name  : Guest Traveler
+  Mobile Number  : N/A
+  Date & Time    : 2026-09-16 19:24:29
+  Destination    : Mahabaleshwar & Panchgani ()
+  Travelers/Days : 2 Travelers | 2 Days
+  User Budget    : ₹0
+  Total Cost     : ₹0
+  Buffer Savings : ₹0 (CONFIRMED)
+  ----------------------------------------------------------------------------
+  Train Transit  : Direct Rail (No. STC-EXP)
+                   Route: City -> Destination | Total Fare: ₹0
+  Hotel Stay     : Verified Sustainable Stay (1 Room, 1 Night)
+                   Total Hotel Cost: ₹0 (0% OTA Cut)
+  Food & Commute : Transit: ₹0 | Meals: ₹0
+  Sightseeing    : ₹0 (Passes & Eco-Trails)
+  Status         : CONFIRMED_SAVED
+================================================================================
+
+RECORD #3 | PASS ID: STC-GLO-534167
+--------------------------------------------------------------------------------
+  Customer Name  : Sahilujadhav3179
+  Mobile Number  : +91 98765 43210
+  Date & Time    : 2026-09-16 19:09:52
+  Destination    : Western Ghats & Sahyadri (Maharashtra, India)
+  Travelers/Days : 1 Travelers | 2 Days
+  User Budget    : ₹4,616
+  Total Cost     : ₹4,616
+  Buffer Savings : ₹0 (CONFIRMED)
+  ----------------------------------------------------------------------------
+  Train Transit  : Western Vande Bharat Express (No. 22223)
+                   Route: Pune ➔ Western Ghats & Sahyadri | Total Fare: ₹1,306
+  Hotel Stay     : Sahyadri Heritage Homestay & Organic Orchard (1 Room, 1 Night)
+                   Total Hotel Cost: ₹1,360 (0% OTA Cut)
+  Food & Commute : Transit: ₹720 | Meals: ₹880
+  Sightseeing    : ₹350 (Passes & Eco-Trails)
+  Places Covered : Kaas Plateau UNESCO Valley, Sinhagad Fort Historic Citadel, Thoseghar Roaring Waterfalls, Koyna Wildlife Forest Sanctuary
+  Status         : CONFIRMED_SAVED
+================================================================================
+
+RECORD #4 | PASS ID: STC-GLO-144576
+--------------------------------------------------------------------------------
+  Customer Name  : Rahul Patil
+  Mobile Number  : +91 98765 43210
+  Date & Time    : 2026-09-11 09:38:49
+  Destination    : Western Ghats & Sahyadri (Maharashtra, India)
+  Travelers/Days : 2 Travelers | 2 Days
+  User Budget    : ₹7,060
+  Total Cost     : ₹7,060
+  Buffer Savings : ₹0 (CONFIRMED)
+  ----------------------------------------------------------------------------
+  Train Transit  : Deccan Queen Superfast (No. 12123)
+                   Route: Pune ➔ Western Ghats & Sahyadri | Total Fare: ₹1,800
+  Hotel Stay     : Sahyadri Heritage Homestay & Organic Orchard (1 Room, 1 Night)
+                   Total Hotel Cost: ₹1,360 (0% OTA Cut)
+  Food & Commute : Transit: ₹1,440 | Meals: ₹1,760
+  Sightseeing    : ₹700 (Passes & Eco-Trails)
+  Places Covered : Kaas Plateau UNESCO Valley, Sinhagad Fort Historic Citadel, Thoseghar Roaring Waterfalls, Koyna Wildlife Forest Sanctuary
+  Status         : CONFIRMED_SAVED
+================================================================================
+

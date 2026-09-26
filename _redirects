@@ -1,0 +1,11 @@
+# Smart Tour Connect - Multi-Page Netlify Routing Rules
+/api/*      http://127.0.0.1:8000/api/:splat  200
+/login      /login.html      200
+/register   /login.html      200
+/admin      /admin.html      200
+/app        /index.html      200
+/tour       /index.html      200
+/sih        /sih_presentation.html  200
+
+# Default root redirects visitors to Login/Registration page first
+/           /login.html      302

@@ -1,0 +1,2 @@
+# Smart Tour Connect - Zero External Dependencies
+# Runs on Python 3 standard library
