@@ -198,8 +198,6 @@ smart-tour-connect/
 ├── admin.html                                 # Host & Administrative Console
 ├── server.py                                  # Python 3 Zero-Dependency REST API & Storage Server
 ├── transit_hotel_engine.py                    # Real Transit (IRCTC/Buses) & Direct Homestay Engine
-├── Rawauthentic_SIH2026_SmartTourConnect.pdf  # Final SIH 2026 Submission Presentation (PDF)
-├── Rawauthentic_SIH2026_SmartTourConnect.pptx # Final SIH 2026 Submission Presentation (PPTX)
 ├── cloudflared.exe                            # Cloudflare Tunnel Binary for HTTPS Edge Hosting
 ├── start_app.bat                              # 1-Click Startup Launcher Script
 ├── manifest.json                              # Web App Manifest for PWA WebAPK compliance
