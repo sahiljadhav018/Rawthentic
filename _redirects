@@ -5,7 +5,6 @@
 /admin      /admin.html      200
 /app        /index.html      200
 /tour       /index.html      200
-/sih        /sih_presentation.html  200
 
 # Default root redirects visitors to Login/Registration page first
 /           /login.html      302

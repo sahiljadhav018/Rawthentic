@@ -113,14 +113,14 @@ graph TD
 
 #### 1. Start the Backend Server (Terminal 1)
 ```powershell
-cd C:\Users\Sahil\.gemini\antigravity\scratch\smart-tour-connect
+# Open terminal inside the project directory
 python server.py
 ```
 > The server will start on `http://localhost:8000`.
 
 #### 2. Start the Cloudflare Tunnel (Terminal 2 — Optional for Mobile Access)
 ```powershell
-cd C:\Users\Sahil\.gemini\antigravity\scratch\smart-tour-connect
+# Open terminal inside the project directory
 .\cloudflared.exe tunnel --url http://localhost:8000
 ```
 > Copy the generated public URL (e.g., `https://subcommittee-phone-tomatoes-speeches.trycloudflare.com`).
@@ -196,10 +196,8 @@ smart-tour-connect/
 ├── index.html                                 # Main Public Client Single Page Application (PWA)
 ├── login.html                                 # Authentication Portal with Siberian Husky Animation
 ├── admin.html                                 # Host & Administrative Console
-├── sih_presentation.html                     # Web Presentation Viewer
 ├── server.py                                  # Python 3 Zero-Dependency REST API & Storage Server
 ├── transit_hotel_engine.py                    # Real Transit (IRCTC/Buses) & Direct Homestay Engine
-├── generate_sih_official_ppt.py               # SIH 2026 Official 6-Slide Presentation Generator
 ├── Rawauthentic_SIH2026_SmartTourConnect.pdf  # Final SIH 2026 Submission Presentation (PDF)
 ├── Rawauthentic_SIH2026_SmartTourConnect.pptx # Final SIH 2026 Submission Presentation (PPTX)
 ├── cloudflared.exe                            # Cloudflare Tunnel Binary for HTTPS Edge Hosting
